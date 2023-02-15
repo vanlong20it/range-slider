@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 3rem 1rem;
+  margin: 0 auto;
+}
+
+.slide-container {
+  position: relative;
+  border-radius: 10px;
+}
+
+.slide-number-left,
+.slide-number-right {
+  position: absolute;
+  bottom: -10px;
+  transform: translateY(1.5rem);
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.slide-number-left {
+  left: 0;
+}
+
+.slide-number-right {
+  right: 0;
+}
+
+.slide-control {
+  width: 100%;
+  appearance: none;
+  height: 10px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.slide-control::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.slide-control::-webkit-slider-runnable-track {
+  appearance: none;
+  height: 10px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.progress {
+  position: absolute;
+  height: 10px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    tomato 0,
+    tomato 3px,
+    pink 3px,
+    pink 6px
+  );
+  border-radius: 10px;
+  animation: bgTransition 0.3s ease-in infinite;
+}
+
+@keyframes bgTransition {
+  from {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      tomato 0,
+      tomato 3px,
+      pink 3px,
+      pink 6px
+    );
+  }
+  to {
+    background-image: repeating-linear-gradient(
+    -45deg,
+    tomato 3px,
+    tomato 6px,
+    pink 6px,
+    pink 9px
+  );
+  }
+}
+
+.current-value {
+  position: absolute;
+  background-color: black;
+  color: white;
+  width: 40px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  left: 0;
+  top: -2rem;
+  transform: translateX(-10px);
+}
